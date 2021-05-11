@@ -4,6 +4,9 @@
 - [Index.cshtml](./CS/AspNetCoreDashboard_ClientData/Pages/Index.cshtml)
 
 # ASP.NET Core Dashboard - How to obtain a dashboard item's client data
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/363110939/)**
+<!-- run online end -->
 
 The example uses the Dashboard Control's [client-side API](https://docs.devexpress.com/Dashboard/400192/web-dashboard/aspnet-core-dashboard-control/client-side-api-overview) to obtain client data that corresponds to a particular visual element.
 
