@@ -5,11 +5,26 @@
   </PropertyGroup>
   <ItemGroup>
     
-    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="20.2.5" /><PackageReference Include="System.Data.SQLite.Core" Version="1.0.112.2" /><PackageReference Include="BuildBundlerMinifier" Version="3.2.447" /><PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.76" /></ItemGroup>
+    <PackageReference Include="DevExpress.AspNetCore.Dashboard" Version="21.2.*" />
+		<PackageReference Include="System.Data.SQLite.Core" Version="1.0.112.2" />
+		<PackageReference Include="BuildBundlerMinifier" Version="3.2.447" />
+		<PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.76" /></ItemGroup>
   <ItemGroup>
+    <Compile Remove="App_Data\**" />
+    <Compile Remove="Content\**" />
+    <Compile Remove="Models\**" />
     <Compile Remove="node_modules\**" />
+    <Content Remove="App_Data\**" />
+    <Content Remove="Content\**" />
+    <Content Remove="Models\**" />
     <Content Remove="node_modules\**" />
+    <EmbeddedResource Remove="App_Data\**" />
+    <EmbeddedResource Remove="Content\**" />
+    <EmbeddedResource Remove="Models\**" />
     <EmbeddedResource Remove="node_modules\**" />
+    <None Remove="App_Data\**" />
+    <None Remove="Content\**" />
+    <None Remove="Models\**" />
     <None Remove="node_modules\**" />
   </ItemGroup>
   <ItemGroup>
@@ -17,12 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\launchSettings.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Content\" />
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="wwwroot\js\client-data.js" />
