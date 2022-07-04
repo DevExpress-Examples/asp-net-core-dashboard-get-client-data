@@ -33,9 +33,6 @@
   <ItemGroup>
     <Content Include="Properties\launchSettings.json" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="wwwroot\js\client-data.js" />
-  </ItemGroup>
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="LibraryManagerRestore" Condition=" '$(Configuration)' == 'Debug' And !Exists('node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

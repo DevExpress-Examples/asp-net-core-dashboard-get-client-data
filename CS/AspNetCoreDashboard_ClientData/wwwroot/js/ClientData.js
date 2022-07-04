@@ -1,3 +1,17 @@
+function onBeforeRender(sender) {
+    var dashboardControl = sender;
+
+    var viewerApiExtension = dashboardControl.findExtension('viewerApi');
+    if (viewerApiExtension)
+        viewerApiExtension.on('itemClick', onItemClick);
+
+    $("#myPopup").dxPopup({
+        width: 800, height: 600,
+        title: "Details",
+        showCloseButton: true
+    });
+}
+
 function onItemClick(args) {
     if (args.itemName == "cardDashboardItem1") {
         var clientData = [],
@@ -14,7 +28,7 @@ function onItemClick(args) {
 
         for (var i = 0; i < clickedItemData.getAxis(sparklineAxis).getPoints().length; i++) {
             var dataTableRow = {},
-            axisPoint = clickedItemData.getSlice(clickedItemData.getAxis(sparklineAxis).getPoints()[i]);
+                axisPoint = clickedItemData.getSlice(clickedItemData.getAxis(sparklineAxis).getPoints()[i]);
 
             dataTableRow["Argument"] = clickedItemData.getAxis(sparklineAxis).getPoints()[i].getValue();
             if (axisPoint.getDeltaValue(delta.id).getActualValue().getValue() != null &&
@@ -62,13 +76,4 @@ function onItemClick(args) {
         $popupContent.append($chart);
         popup.show();
     };
-}
-
-function onBeforeRender(dashboardControl) {
-
-    $("#myPopup").dxPopup({
-        width: 800, height: 600,
-        title: "Details",
-        showCloseButton: true
-    });
 }

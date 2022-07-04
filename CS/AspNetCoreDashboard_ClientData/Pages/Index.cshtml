@@ -9,10 +9,5 @@
 	.ControllerName("DefaultDashboard")
 	.WorkingMode(WorkingMode.Viewer)
 	.OnBeforeRender("onBeforeRender")
-	.Extensions(ext => {
-		ext.ViewerApi(viewerApi => {
-			viewerApi.OnItemClick("onItemClick");
-		});
-	})
 )
 </div>
