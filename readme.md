@@ -18,7 +18,7 @@ The [ItemDataAxis.getPoints](https://docs.devexpress.com/Dashboard/js-DevExpress
 
 ## Files to Look At
 
-- [client-data.js](./CS/AspNetCoreDashboard_ClientData/wwwroot/js/client-data.js)
+- [ClientData.js](./CS/AspNetCoreDashboard_ClientData/wwwroot/js/ClientData.js)
 - [_Layout.cshtml](./CS/AspNetCoreDashboard_ClientData/Pages/_Layout.cshtml)
 - [Index.cshtml](./CS/AspNetCoreDashboard_ClientData/Pages/Index.cshtml)
 
