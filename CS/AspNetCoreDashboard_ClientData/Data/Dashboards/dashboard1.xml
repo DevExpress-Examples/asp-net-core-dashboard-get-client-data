@@ -1,178 +1,178 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Dashboard>
-  <Title Text="Dashboard" />
-  <DataSources>
-    <SqlDataSource Name="SalesPerson" ComponentName="DataSource1">
-      <Connection Name="nwindConnection" FromAppConfig="true" />
-      <Query Type="SelectQuery" Name="SalesPerson">
-        <Tables>
-          <Table Name="SalesPerson" />
-        </Tables>
-        <Columns>
-          <AllColumns Table="SalesPerson" />
-        </Columns>
-      </Query>
-      <ResultSchema>
-        <DataSet Name="SalesPerson">
-          <View Name="SalesPerson">
-            <Field Name="OrderID" Type="Int32" />
-            <Field Name="Country" Type="String" />
-            <Field Name="FirstName" Type="String" />
-            <Field Name="LastName" Type="String" />
-            <Field Name="ProductName" Type="String" />
-            <Field Name="CategoryName" Type="String" />
-            <Field Name="OrderDate" Type="DateTime" />
-            <Field Name="UnitPrice" Type="Decimal" />
-            <Field Name="Quantity" Type="Int16" />
-            <Field Name="Discount" Type="Single" />
-            <Field Name="Extended Price" Type="Decimal" />
-            <Field Name="Sales Person" Type="String" />
-          </View>
-        </DataSet>
-      </ResultSchema>
-      <ConnectionOptions CloseConnection="true" />
-    </SqlDataSource>
-    <ExtractFileDataSource ComponentName="dashboardExtractDataSource1" Name="Extract Data Source 1">
-      <FileName>SalesPerson.dat</FileName>
-      <ExtractSourceDataMember>SalesPerson</ExtractSourceDataMember>
-      <ExtractSourceFilter></ExtractSourceFilter>
-      <ExtractSource>
-        <SqlDataSource Name="SalesPerson (local copy)" ComponentName="DataSource1 (local copy)">
-          <Connection Name="nwindConnection" FromAppConfig="true" />
-          <Query Type="SelectQuery" Name="SalesPerson">
-            <Tables>
-              <Table Name="SalesPerson" />
-            </Tables>
-            <Columns>
-              <AllColumns Table="SalesPerson" />
-            </Columns>
-          </Query>
-          <ResultSchema>
-            <DataSet Name="SalesPerson (local copy)">
-              <View Name="SalesPerson">
-                <Field Name="OrderID" Type="Int32" />
-                <Field Name="Country" Type="String" />
-                <Field Name="FirstName" Type="String" />
-                <Field Name="LastName" Type="String" />
-                <Field Name="ProductName" Type="String" />
-                <Field Name="CategoryName" Type="String" />
-                <Field Name="OrderDate" Type="DateTime" />
-                <Field Name="UnitPrice" Type="Decimal" />
-                <Field Name="Quantity" Type="Int16" />
-                <Field Name="Discount" Type="Single" />
-                <Field Name="Extended Price" Type="Decimal" />
-                <Field Name="Sales Person" Type="String" />
-              </View>
-            </DataSet>
-          </ResultSchema>
-          <ConnectionOptions CloseConnection="true" />
-        </SqlDataSource>
-      </ExtractSource>
-      <NumberOfRows>-1</NumberOfRows>
-      <Parameters />
-      <SavedSchema>
-        <Column>
-          <Name>OrderID</Name>
-          <Type>System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>Country</Name>
-          <Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>FirstName</Name>
-          <Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>LastName</Name>
-          <Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>ProductName</Name>
-          <Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>CategoryName</Name>
-          <Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>OrderDate</Name>
-          <Type>System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>UnitPrice</Name>
-          <Type>System.Decimal, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>Quantity</Name>
-          <Type>System.Int16, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>Discount</Name>
-          <Type>System.Single, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>Extended Price</Name>
-          <Type>System.Decimal, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-        <Column>
-          <Name>Sales Person</Name>
-          <Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
-        </Column>
-      </SavedSchema>
-    </ExtractFileDataSource>
-  </DataSources>
-  <Items>
-    <Pie ComponentName="pieDashboardItem1" Name="Pie 1" ShowCaption="false" DataSource="dashboardExtractDataSource1">
-      <InteractivityOptions MasterFilterMode="Multiple" />
-      <DataItems>
-        <Measure DataMember="Extended Price" DefaultId="DataItem0" />
-        <Dimension DataMember="OrderDate" DefaultId="DataItem1" />
-        <Dimension DataMember="Country" DefaultId="DataItem2" />
-      </DataItems>
-      <SeriesDimensions>
-        <SeriesDimension DefaultId="DataItem2" />
-      </SeriesDimensions>
-      <Arguments>
-        <Argument DefaultId="DataItem1" />
-      </Arguments>
-      <Values>
-        <Value DefaultId="DataItem0" />
-      </Values>
-    </Pie>
-    <Card ComponentName="cardDashboardItem1" Name="Card 1" ShowCaption="false" DataSource="dashboardExtractDataSource1">
-      <DataItems>
-        <Measure DataMember="Extended Price" SummaryType="StdDev" DefaultId="DataItem0" />
-        <Dimension DataMember="Sales Person" DefaultId="DataItem1" />
-        <Dimension DataMember="OrderDate" DateTimeGroupInterval="MonthYear" DefaultId="DataItem2" />
-        <Measure DataMember="Extended Price" SummaryType="StdDevp" DefaultId="DataItem3" />
-      </DataItems>
-      <SeriesDimensions>
-        <SeriesDimension DefaultId="DataItem1" />
-      </SeriesDimensions>
-      <Card>
-        <ActualValue DefaultId="DataItem0" />
-        <TargetValue DefaultId="DataItem3" />
-        <AbsoluteVariationNumericFormat />
-        <PercentVariationNumericFormat />
-        <PercentOfTargetNumericFormat />
-        <LayoutTemplate Type="Stretched">
-          <TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
-          <MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
-          <SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
-          <BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
-          <BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
-          <DeltaIndicator Visible="true" />
-          <Sparkline Visible="true" />
-        </LayoutTemplate>
-      </Card>
-      <SparklineArgument DefaultId="DataItem2" />
-    </Card>
-  </Items>
-  <LayoutTree>
-    <LayoutGroup>
-      <LayoutItem DashboardItem="pieDashboardItem1" Weight="51.743220807969" />
-      <LayoutItem DashboardItem="cardDashboardItem1" Weight="148.256779192031" />
-    </LayoutGroup>
-  </LayoutTree>
+	<Title Text="Dashboard" />
+	<DataSources>
+		<SqlDataSource Name="SalesPerson" ComponentName="DataSource1">
+			<Connection Name="nwindConnection" FromAppConfig="true" />
+			<Query Type="SelectQuery" Name="SalesPerson">
+				<Tables>
+					<Table Name="SalesPerson" />
+				</Tables>
+				<Columns>
+					<AllColumns Table="SalesPerson" />
+				</Columns>
+			</Query>
+			<ResultSchema>
+				<DataSet Name="SalesPerson">
+					<View Name="SalesPerson">
+						<Field Name="OrderID" Type="Int32" />
+						<Field Name="Country" Type="String" />
+						<Field Name="FirstName" Type="String" />
+						<Field Name="LastName" Type="String" />
+						<Field Name="ProductName" Type="String" />
+						<Field Name="CategoryName" Type="String" />
+						<Field Name="OrderDate" Type="DateTime" />
+						<Field Name="UnitPrice" Type="Decimal" />
+						<Field Name="Quantity" Type="Int16" />
+						<Field Name="Discount" Type="Single" />
+						<Field Name="Extended Price" Type="Decimal" />
+						<Field Name="Sales Person" Type="String" />
+					</View>
+				</DataSet>
+			</ResultSchema>
+			<ConnectionOptions CloseConnection="true" />
+		</SqlDataSource>
+		<ExtractFileDataSource ComponentName="dashboardExtractDataSource1" Name="Extract Data Source 1">
+			<FileName>SalesPerson.dat</FileName>
+			<ExtractSourceDataMember>SalesPerson</ExtractSourceDataMember>
+			<ExtractSourceFilter></ExtractSourceFilter>
+			<ExtractSource>
+				<SqlDataSource Name="SalesPerson (local copy)" ComponentName="DataSource1 (local copy)">
+					<Connection Name="nwindConnection" FromAppConfig="true" />
+					<Query Type="SelectQuery" Name="SalesPerson">
+						<Tables>
+							<Table Name="SalesPerson" />
+						</Tables>
+						<Columns>
+							<AllColumns Table="SalesPerson" />
+						</Columns>
+					</Query>
+					<ResultSchema>
+						<DataSet Name="SalesPerson (local copy)">
+							<View Name="SalesPerson">
+								<Field Name="OrderID" Type="Int32" />
+								<Field Name="Country" Type="String" />
+								<Field Name="FirstName" Type="String" />
+								<Field Name="LastName" Type="String" />
+								<Field Name="ProductName" Type="String" />
+								<Field Name="CategoryName" Type="String" />
+								<Field Name="OrderDate" Type="DateTime" />
+								<Field Name="UnitPrice" Type="Decimal" />
+								<Field Name="Quantity" Type="Int16" />
+								<Field Name="Discount" Type="Single" />
+								<Field Name="Extended Price" Type="Decimal" />
+								<Field Name="Sales Person" Type="String" />
+							</View>
+						</DataSet>
+					</ResultSchema>
+					<ConnectionOptions CloseConnection="true" />
+				</SqlDataSource>
+			</ExtractSource>
+			<NumberOfRows>-1</NumberOfRows>
+			<Parameters />
+			<SavedSchema>
+				<Column>
+					<Name>OrderID</Name>
+					<Type>System.Int32, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>Country</Name>
+					<Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>FirstName</Name>
+					<Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>LastName</Name>
+					<Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>ProductName</Name>
+					<Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>CategoryName</Name>
+					<Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>OrderDate</Name>
+					<Type>System.DateTime, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>UnitPrice</Name>
+					<Type>System.Decimal, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>Quantity</Name>
+					<Type>System.Int16, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>Discount</Name>
+					<Type>System.Single, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>Extended Price</Name>
+					<Type>System.Decimal, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+				<Column>
+					<Name>Sales Person</Name>
+					<Type>System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e</Type>
+				</Column>
+			</SavedSchema>
+		</ExtractFileDataSource>
+	</DataSources>
+	<Items>
+		<Pie ComponentName="pieDashboardItem1" Name="Pie 1" ShowCaption="false" DataSource="dashboardExtractDataSource1">
+			<InteractivityOptions MasterFilterMode="Multiple" />
+			<DataItems>
+				<Measure DataMember="Extended Price" DefaultId="DataItem0" />
+				<Dimension DataMember="OrderDate" DefaultId="DataItem1" />
+				<Dimension DataMember="Country" DefaultId="DataItem2" />
+			</DataItems>
+			<SeriesDimensions>
+				<SeriesDimension DefaultId="DataItem2" />
+			</SeriesDimensions>
+			<Arguments>
+				<Argument DefaultId="DataItem1" />
+			</Arguments>
+			<Values>
+				<Value DefaultId="DataItem0" />
+			</Values>
+		</Pie>
+		<Card ComponentName="cardDashboardItem1" Name="Card 1" ShowCaption="false" DataSource="dashboardExtractDataSource1">
+			<DataItems>
+				<Measure DataMember="Extended Price" SummaryType="StdDev" DefaultId="DataItem0" />
+				<Dimension DataMember="Sales Person" DefaultId="DataItem1" />
+				<Dimension DataMember="OrderDate" DateTimeGroupInterval="MonthYear" DefaultId="DataItem2" />
+				<Measure DataMember="Extended Price" SummaryType="StdDevp" DefaultId="DataItem3" />
+			</DataItems>
+			<SeriesDimensions>
+				<SeriesDimension DefaultId="DataItem1" />
+			</SeriesDimensions>
+			<Card>
+				<ActualValue DefaultId="DataItem0" />
+				<TargetValue DefaultId="DataItem3" />
+				<AbsoluteVariationNumericFormat />
+				<PercentVariationNumericFormat />
+				<PercentOfTargetNumericFormat />
+				<LayoutTemplate Type="Stretched">
+					<TopValue Visible="true" ValueType="ActualValue" DimensionIndex="0" />
+					<MainValue Visible="true" ValueType="Title" DimensionIndex="0" />
+					<SubValue Visible="true" ValueType="Subtitle" DimensionIndex="0" />
+					<BottomValue1 Visible="true" ValueType="PercentVariation" DimensionIndex="0" />
+					<BottomValue2 Visible="true" ValueType="AbsoluteVariation" DimensionIndex="0" />
+					<DeltaIndicator Visible="true" />
+					<Sparkline Visible="true" />
+				</LayoutTemplate>
+			</Card>
+			<SparklineArgument DefaultId="DataItem2" />
+		</Card>
+	</Items>
+	<LayoutTree>
+		<LayoutGroup>
+			<LayoutItem DashboardItem="pieDashboardItem1" Weight="51.743220807969" />
+			<LayoutItem DashboardItem="cardDashboardItem1" Weight="148.256779192031" />
+		</LayoutGroup>
+	</LayoutTree>
 </Dashboard>

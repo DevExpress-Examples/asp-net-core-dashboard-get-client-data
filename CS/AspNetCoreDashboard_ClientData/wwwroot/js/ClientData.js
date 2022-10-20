@@ -1,4 +1,4 @@
-function onBeforeRender(sender) {
+﻿function onBeforeRender(sender) {
     var dashboardControl = sender;
 
     var viewerApiExtension = dashboardControl.findExtension('viewerApi');
