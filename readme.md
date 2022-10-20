@@ -16,7 +16,7 @@ In the event handler, the `e.getData` method is called to obtain dashboard item
 
 The [ItemDataAxis.getPoints](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.Data.ItemDataAxis#js_devexpress_dashboard_data_itemdataaxis_getpoints) method is used to obtain axis points that belong to the "Sparkline" data axis. Corresponding actual/target values are obtained using the [ItemData.getDeltaValue(deltaId)](https://docs.devexpress.com/Dashboard/js-DevExpress.Dashboard.Data.ItemData#js_devexpress_dashboard_data_itemdata_getdeltavalue_deltaid_) method.
 
-## Files to Look At
+## Files to Review
 
 - [ClientData.js](./CS/AspNetCoreDashboard_ClientData/wwwroot/js/ClientData.js)
 - [_Layout.cshtml](./CS/AspNetCoreDashboard_ClientData/Pages/_Layout.cshtml)
